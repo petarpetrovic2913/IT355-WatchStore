@@ -1,0 +1,10 @@
+.sidebarWrapper {
+  position: fixed;
+  left: 0;
+  top: 60px;
+  padding-top: 200px;
+  height: calc(100% - 60px);
+  width: 250px;
+  background-color: #8ae600;
+  padding: 50px 5px 0 5px;
+}
