@@ -1,13 +1,14 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import UpdateProductComponent from '../../components/Product/UpdateProduct/UpdateProduct';
 import Title from '../../components/Title/Title';
+import './UpdateProduct.css';
 
 const UpdateProduct = () => {
   return (
-    <Fragment>
+    <div className="updateWrapper">
       <Title title="Update Product" />
       <UpdateProductComponent />
-    </Fragment>
+    </div>
   );
 };
 

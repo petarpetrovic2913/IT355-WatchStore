@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { getCart, checkout } from '../../../store/actions/cartActions';
 import CartItem from './CartItem/CartItem';
+import './CartItems.css';
 
 class CartItems extends Component {
   constructor() {
@@ -47,31 +48,33 @@ class CartItems extends Component {
   render() {
     let { cartItems, totalPrice, errors } = this.state;
     return (
-      <div>
-        {cartItems && (
-          <Table>
-            <Table.Header>
-              <Table.Row>
-                <Table.HeaderCell>Name</Table.HeaderCell>
-                <Table.HeaderCell>Quantity</Table.HeaderCell>
-                <Table.HeaderCell>Price</Table.HeaderCell>
-                <Table.HeaderCell />
-                <Table.HeaderCell />
-                <Table.HeaderCell />
-              </Table.Row>
-            </Table.Header>
-            <Table.Body>
-              {cartItems.map((cartItem, index) => (
-                <CartItem key={index} content={cartItem} />
-              ))}
-            </Table.Body>
-          </Table>
+      <div className="cartItems">
+        {cartItems.length !== 0 ? (
+          <div>
+            <Table>
+              <Table.Header>
+                <Table.Row>
+                  <Table.HeaderCell>Name</Table.HeaderCell>
+                  <Table.HeaderCell>Quantity</Table.HeaderCell>
+                  <Table.HeaderCell>Price</Table.HeaderCell>
+                  <Table.HeaderCell />
+                </Table.Row>
+              </Table.Header>
+              <Table.Body>
+                {cartItems.map((cartItem, index) => (
+                  <CartItem key={index} content={cartItem} />
+                ))}
+              </Table.Body>
+            </Table>
+            <Header size="medium">Total cart price: {totalPrice}</Header>
+            {errors && <p style={{ color: 'red' }}>{errors.message}</p>}
+            <Button color="orange" onClick={this.onCheckout}>
+              Checkout
+            </Button>
+          </div>
+        ) : (
+          <p>Your cart is empty</p>
         )}
-        <Header size="medium">Total cart price: {totalPrice}</Header>
-        {errors && <p style={{ color: 'red' }}>{errors.message}</p>}
-        <Button color="orange" onClick={this.onCheckout}>
-          Checkout
-        </Button>
       </div>
     );
   }

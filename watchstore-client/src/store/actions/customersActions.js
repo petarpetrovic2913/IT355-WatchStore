@@ -15,7 +15,7 @@ export const getCustomers = () => {
 
 export const deleteCustomer = id => {
   return async dispatch => {
-    if (window.confirm('Are you sure that you want to delete this product?')) {
+    if (window.confirm('Are you sure that you want to delete this customer?')) {
       await axios.delete(
         `http://localhost:8080/admin/customermanagement/delete/${id}`
       );

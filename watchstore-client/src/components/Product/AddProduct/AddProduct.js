@@ -8,6 +8,7 @@ import {
   getCategories,
   getCategoryById
 } from '../../../store/actions/categoryActions';
+import './AddProduct.css';
 
 class AddProduct extends Component {
   constructor() {
@@ -122,14 +123,14 @@ class AddProduct extends Component {
         {categories &&
           categories.map((category, index) => {
             return (
-              <Form.Field key={index}>
+              <Form.Field key={index} className="checkboxForm">
                 <input
                   type="checkbox"
                   id={category.categoryId}
                   onClick={this.onClick}
                   value={category.categoryId}
                 />
-                <label>{category.categoryName}</label>
+                <span className="categoryLabel">{category.categoryName}</span>
               </Form.Field>
             );
           })}

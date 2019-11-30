@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Logo from './Logo/Logo';
+import { withRouter } from 'react-router-dom';
 import './Header.css';
 import { logout } from '../../store/actions/authActions';
+import Logo from '../Logo/Logo';
 
 class Header extends Component {
   logoutAction = () => {
@@ -13,29 +14,38 @@ class Header extends Component {
 
   renderUserHeader = () => (
     <div className="links">
+      <p className="welcome">{`Welcome ${this.props.security.customerName}`}</p>
       <Link to="/cart" style={{ paddingRight: '30px' }}>
-        Cart
+        <p className="labelLink">Cart</p>
       </Link>
       <Link to="/" onClick={this.logoutAction}>
-        Logout
+        <p className="labelLink">Logout</p>
       </Link>
     </div>
   );
 
   renderAdminHeader = () => (
     <div className="links">
-      <Link to="/customers">List of registered customers</Link>
-      <Link to="/add">Add product</Link>
+      <Link to="/customers">
+        <p className="labelLink">Customers</p>
+      </Link>
+      <Link to="/add">
+        <p className="labelLink">Add product</p>
+      </Link>
       <Link to="/" onClick={this.logoutAction}>
-        Logout
+        <p className="labelLink">Logout</p>
       </Link>
     </div>
   );
 
   renderIncognitoHeader = () => (
     <div className="links">
-      <Link to="/register">Sign up</Link>
-      <Link to="/login">Login</Link>
+      <Link to="/register">
+        <p className="labelLink">Sign up</p>
+      </Link>
+      <Link to="/login">
+        <p className="labelLink">Login</p>
+      </Link>
     </div>
   );
 
@@ -44,15 +54,16 @@ class Header extends Component {
     const userHeader = isAuthenticated && role === 'ROLE_USER';
     const adminHeader = isAuthenticated && role === 'ROLE_ADMIN';
     const incognitoHeader = !isAuthenticated;
+    const isHomePage = this.props.location.pathname === '/';
 
     return (
-      <div className="headerHolder">
-        <Logo />
-        {userHeader && (
+      <div className={`headerHolder ${isHomePage ? '' : 'notHomePageHeader'}`}>
+        {!isHomePage && <Logo />}
+        {/* {userHeader && (
           <p className="welcome">{`Welcome ${
             this.props.security.customerName
           }`}</p>
-        )}
+        )} */}
         {userHeader && this.renderUserHeader()}
         {adminHeader && this.renderAdminHeader()}
         {incognitoHeader && this.renderIncognitoHeader()}
@@ -68,4 +79,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { logout }
-)(Header);
+)(withRouter(Header));

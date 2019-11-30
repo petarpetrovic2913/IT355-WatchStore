@@ -7,8 +7,8 @@ export default class Layout extends Component {
   render() {
     return (
       <div className="layoutHolder">
-        <Sidebar />
         <Header />
+        <Sidebar />
         <div className="contentHolder">{this.props.children}</div>
       </div>
     );

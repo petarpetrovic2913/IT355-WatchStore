@@ -72,7 +72,7 @@ class Customer extends Component {
         <Table.Cell width={3}>{username}</Table.Cell>
         <Table.Cell width={3}>{role}</Table.Cell>
         <Table.Cell width={3}>
-          <Form onSubmit={this.onSubmit}>
+          <Form onSubmit={this.onSubmit} style={{ padding: 0 }}>
             <Form.Field>
               <input
                 type="radio"

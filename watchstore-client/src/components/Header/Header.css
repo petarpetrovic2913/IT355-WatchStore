@@ -2,30 +2,43 @@
   top: 0;
   width: 100%;
   height: 60px;
-  background-color: #008000;
+  background-color: #2185d0;
   position: fixed;
-  z-index: 100;
+  z-index: 4;
+}
+
+.notHomePageHeader {
+  display: flex;
+  justify-content: space-between;
 }
 
 .links {
-  float: right;
-  position: relative;
-  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+  height: 100%;
+  align-items: center;
+}
+
+.labelLink {
+  text-transform: uppercase;
+  font-size: 20px;
+  color: white;
+  line-height: 1;
+}
+.labelLink:hover {
+  color: #192129;
 }
 
 .links a {
-  padding-right: 10px;
+  padding-right: 20px;
   color: white;
-}
-
-.links a:hover {
-  color: #8ae600;
 }
 
 .welcome {
-  display: inline-block;
-  position: relative;
-  bottom: 45%;
-  color: white;
-  padding-left: 20px;
+  text-transform: uppercase;
+  font-size: 20px;
+  /* line-height: 1; */
+  margin: 0;
+  padding-right: 50px;
+  color: black;
 }

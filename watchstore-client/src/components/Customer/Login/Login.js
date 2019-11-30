@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { Button, Form } from 'semantic-ui-react';
 import { login } from '../../../store/actions/authActions';
+import './Login.css';
 
 class Login extends Component {
   constructor() {
@@ -63,7 +64,6 @@ class Login extends Component {
               onChange={this.onChange}
             />
           </Form.Field>
-          <p style={{ color: 'red' }}>{errors && errors.username}</p>
           <Form.Field>
             <label>Password</label>
             <input
@@ -74,10 +74,10 @@ class Login extends Component {
               onChange={this.onChange}
             />
           </Form.Field>
-          <p style={{ color: 'red' }}>{errors && errors.password}</p>
-          <Form.Field>
+          <p style={{ color: 'red' }}>{errors && errors.message}</p>
+          <Form.Field className="checkboxWrapper">
             <input type="checkbox" onClick={this.onClick} name="Remember me" />
-            <label>Remember me</label>
+            <span className="loginLabel">Remember me</span>
           </Form.Field>
           <Button type="submit">Submit</Button>
         </Form>

@@ -6,6 +6,7 @@ import {
   getProducts,
   getAllProducts
 } from '../../../store/actions/productsActions';
+import './Products.css';
 
 class Products extends Component {
   constructor() {
@@ -80,6 +81,47 @@ class Products extends Component {
       });
   };
 
+  renderTableHeader = () => (
+    <Table.Header>
+      <Table.Row>
+        <Table.HeaderCell>Model</Table.HeaderCell>
+        <Table.HeaderCell>Category</Table.HeaderCell>
+        <Table.HeaderCell>Description</Table.HeaderCell>
+        <Table.HeaderCell>Price</Table.HeaderCell>
+        <Table.HeaderCell>Unit in stock</Table.HeaderCell>
+        <Table.HeaderCell />
+        <Table.HeaderCell />
+        <Table.HeaderCell />
+        <Table.HeaderCell />
+        <Table.HeaderCell />
+      </Table.Row>
+    </Table.Header>
+  );
+
+  renderPageArrows = pageNum => (
+    <>
+      <Button
+        onClick={this.prevPage}
+        labelPosition="left"
+        icon="left chevron"
+        content="Previous"
+        primary
+        size="mini"
+        className="pageNumButton"
+      />
+      <span className="pageNum">{pageNum}</span>
+      <Button
+        onClick={this.nextPage}
+        labelPosition="right"
+        icon="right chevron"
+        content="Next"
+        primary
+        size="mini"
+        className="pageNumButton"
+      />
+    </>
+  );
+
   render() {
     let {
       filtered,
@@ -95,26 +137,12 @@ class Products extends Component {
           icon={{ name: 'search', circular: true, link: true }}
           placeholder="Search..."
           type="text"
-          onChange={this.handleChange}
           className="inputSearch"
-          style={{ paddingBottom: '15px' }}
+          onChange={this.handleChange}
         />
         {searchParam && (
           <Table>
-            <Table.Header>
-              <Table.Row>
-                <Table.HeaderCell>Model</Table.HeaderCell>
-                <Table.HeaderCell>Category</Table.HeaderCell>
-                <Table.HeaderCell>Description</Table.HeaderCell>
-                <Table.HeaderCell>Price</Table.HeaderCell>
-                <Table.HeaderCell>Unit in stock</Table.HeaderCell>
-                <Table.HeaderCell />
-                <Table.HeaderCell />
-                <Table.HeaderCell />
-                <Table.HeaderCell />
-                <Table.HeaderCell />
-              </Table.Row>
-            </Table.Header>
+            {this.renderTableHeader()}
             <Table.Body>
               {filtered.map((product, index) => (
                 <Product key={index} content={product} />
@@ -124,52 +152,22 @@ class Products extends Component {
         )}
         {!searchParam && !advancedSearch && (
           <div>
-            <Button onClick={this.prevPage}>{'<-'}</Button>
-            {pageNum}
-            <Button onClick={this.nextPage}>{'->'}</Button>
+            {this.renderPageArrows(pageNum)}
             <Table>
-              <Table.Header>
-                <Table.Row>
-                  <Table.HeaderCell>Model</Table.HeaderCell>
-                  <Table.HeaderCell>Category</Table.HeaderCell>
-                  <Table.HeaderCell>Description</Table.HeaderCell>
-                  <Table.HeaderCell>Price</Table.HeaderCell>
-                  <Table.HeaderCell>Unit in stock</Table.HeaderCell>
-                  <Table.HeaderCell />
-                  <Table.HeaderCell />
-                  <Table.HeaderCell />
-                  <Table.HeaderCell />
-                  <Table.HeaderCell />
-                </Table.Row>
-              </Table.Header>
+              {this.renderTableHeader()}
               <Table.Body>
                 {productsPerPage.map((product, index) => (
                   <Product key={index} content={product} pageNum={pageNum} />
                 ))}
               </Table.Body>
             </Table>
-            <Button onClick={this.prevPage}>{'<-'}</Button>
-            {pageNum}
-            <Button onClick={this.nextPage}>{'->'}</Button>
+            {this.renderPageArrows(pageNum)}
           </div>
         )}
         {advancedSearch && !searchParam && (
           <div>
             <Table>
-              <Table.Header>
-                <Table.Row>
-                  <Table.HeaderCell>Model</Table.HeaderCell>
-                  <Table.HeaderCell>Category</Table.HeaderCell>
-                  <Table.HeaderCell>Description</Table.HeaderCell>
-                  <Table.HeaderCell>Price</Table.HeaderCell>
-                  <Table.HeaderCell>Unit in stock</Table.HeaderCell>
-                  <Table.HeaderCell />
-                  <Table.HeaderCell />
-                  <Table.HeaderCell />
-                  <Table.HeaderCell />
-                  <Table.HeaderCell />
-                </Table.Row>
-              </Table.Header>
+              {this.renderTableHeader()}
               <Table.Body>
                 {products.map((product, index) => (
                   <Product key={index} content={product} />

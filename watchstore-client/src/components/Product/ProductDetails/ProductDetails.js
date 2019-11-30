@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
+import { Item, Header } from 'semantic-ui-react';
 import { withRouter } from 'react-router-dom';
 import { getProduct } from '../../../store/actions/productsActions';
-import { Item, Header } from 'semantic-ui-react';
 
 class ProductDetails extends Component {
   constructor() {
@@ -54,7 +54,6 @@ class ProductDetails extends Component {
               'https://react.semantic-ui.com/images/wireframe/image.png'
             }
           />
-
           <Item.Content>
             <Item.Header as="a">
               <Header size="medium">{productName}</Header>

@@ -5,6 +5,7 @@ import { Button, Form } from 'semantic-ui-react';
 import { getFilteredProducts } from '../../store/actions/productsActions';
 import { getCategories } from '../../store/actions/categoryActions';
 import './Sidebar.css';
+import Logo from '../Logo/Logo';
 
 class Sidebar extends Component {
   constructor() {
@@ -77,23 +78,26 @@ class Sidebar extends Component {
     return (
       routeCondition && (
         <div className="sidebarWrapper">
-          <Form onSubmit={this.onSubmit}>
+          <div className="logoWrapper">
+            <Logo />
+          </div>
+          <Form onSubmit={this.onSubmit} className="form">
             {categories &&
               categories.map((category, index) => {
                 return (
-                  <Form.Field key={index}>
+                  <Form.Field key={index} className="categoryWrapper">
                     <input
                       type="checkbox"
                       onClick={this.onClick}
                       value={category.categoryId}
                       name={category.categoryName}
                     />
-                    <label>{category.categoryName}</label>
+                    <p className="checkBoxLabel">{category.categoryName}</p>
                   </Form.Field>
                 );
               })}
-            <Form.Field>
-              <label>Price Down</label>
+            <Form.Field className="searchWrapper">
+              <p className="label">Price Down</p>
               <input
                 type="text"
                 name="priceDown"
@@ -102,7 +106,7 @@ class Sidebar extends Component {
               />
             </Form.Field>
             <Form.Field>
-              <label>Price Upper</label>
+              <p className="label">Price Upper</p>
               <input
                 type="text"
                 name="priceUpper"
@@ -111,7 +115,7 @@ class Sidebar extends Component {
               />
             </Form.Field>
             <Form.Field>
-              <label>Unit in stock</label>
+              <p className="label">Unit in stock</p>
               <input
                 type="text"
                 name="unitInStock"
@@ -120,7 +124,7 @@ class Sidebar extends Component {
               />
             </Form.Field>
             {errors && <p style={{ color: 'red' }}>{errors.message}</p>}
-            <Form.Field>
+            <Form.Field className="submitButton">
               <Button type="submit">Submit</Button>
             </Form.Field>
           </Form>

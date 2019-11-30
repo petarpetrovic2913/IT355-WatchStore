@@ -1,13 +1,12 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import RegisterComponent from '../../components/Customer/Register/Register';
-import Title from '../../components/Title/Title';
+import './Register.css';
 
 const Register = () => {
   return (
-    <Fragment>
-      <Title title="Register" />
+    <div className="registerWrapper">
       <RegisterComponent />
-    </Fragment>
+    </div>
   );
 };
 

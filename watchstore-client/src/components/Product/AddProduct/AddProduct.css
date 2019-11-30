@@ -1,0 +1,11 @@
+.checkboxForm {
+  display: flex;
+  align-items: center;
+}
+
+.categoryLabel {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  padding-left: 10px;
+}

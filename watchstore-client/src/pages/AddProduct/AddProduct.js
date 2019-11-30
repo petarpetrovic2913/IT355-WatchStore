@@ -1,13 +1,14 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import AddProductComponent from '../../components/Product/AddProduct/AddProduct';
 import Title from '../../components/Title/Title';
+import './AddProduct.css';
 
 const AddProduct = () => {
   return (
-    <Fragment>
-      <Title title="Add Product" />
+    <div className="addProductWrapper">
+      <Title title="Add New Product" />
       <AddProductComponent />
-    </Fragment>
+    </div>
   );
 };
 

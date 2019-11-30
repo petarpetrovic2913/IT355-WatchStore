@@ -1,13 +1,12 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import LoginComponent from '../../components/Customer/Login/Login';
-import Title from '../../components/Title/Title';
+import './Login.css';
 
 const Login = () => {
   return (
-    <Fragment>
-      <Title title="Login" />
+    <div className="loginWrapper">
       <LoginComponent />
-    </Fragment>
+    </div>
   );
 };
 
