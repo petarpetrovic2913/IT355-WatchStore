@@ -1,0 +1,229 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test App component renders without crashing 1`] = `
+<div>
+  <div
+    class="layoutHolder"
+  >
+    <div
+      class="headerHolder "
+    >
+      <div
+        class="links"
+      >
+        <a
+          href="/register"
+        >
+          <p
+            class="labelLink"
+          >
+            Sign up
+          </p>
+        </a>
+        <a
+          href="/login"
+        >
+          <p
+            class="labelLink"
+          >
+            Login
+          </p>
+        </a>
+      </div>
+    </div>
+    <div
+      class="sidebarWrapper"
+    >
+      <div
+        class="logoWrapper"
+      >
+        <a
+          class="logoLink"
+          href="/"
+        >
+          <img
+            alt="AppLogo"
+            src="slika1.png"
+          />
+        </a>
+      </div>
+      <form
+        class="ui form form"
+      >
+        <div
+          class="field searchWrapper"
+        >
+          <p
+            class="label"
+          >
+            Price Down
+          </p>
+          <input
+            name="priceDown"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="field"
+        >
+          <p
+            class="label"
+          >
+            Price Upper
+          </p>
+          <input
+            name="priceUpper"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="field"
+        >
+          <p
+            class="label"
+          >
+            Unit in stock
+          </p>
+          <input
+            name="unitInStock"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="field submitButton"
+        >
+          <button
+            class="ui button"
+            type="submit"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+    <div
+      class="contentHolder"
+    >
+      <div
+        class="ui icon input inputSearch"
+      >
+        <input
+          placeholder="Search..."
+          type="text"
+        />
+        <i
+          aria-hidden="true"
+          class="search circular link icon"
+        />
+      </div>
+      
+      <div>
+        <button
+          class="ui mini icon primary left labeled button pageNumButton"
+        >
+          <i
+            aria-hidden="true"
+            class="left chevron icon"
+          />
+          Previous
+        </button>
+        <span
+          class="pageNum"
+        >
+          0
+        </span>
+        <button
+          class="ui mini icon primary right labeled button pageNumButton"
+        >
+          <i
+            aria-hidden="true"
+            class="right chevron icon"
+          />
+          Next
+        </button>
+        <table
+          class="ui table"
+        >
+          <thead
+            class=""
+          >
+            <tr
+              class=""
+            >
+              <th
+                class=""
+              >
+                Model
+              </th>
+              <th
+                class=""
+              >
+                Category
+              </th>
+              <th
+                class=""
+              >
+                Description
+              </th>
+              <th
+                class=""
+              >
+                Price
+              </th>
+              <th
+                class=""
+              >
+                Unit in stock
+              </th>
+              <th
+                class=""
+              />
+              <th
+                class=""
+              />
+              <th
+                class=""
+              />
+              <th
+                class=""
+              />
+              <th
+                class=""
+              />
+            </tr>
+          </thead>
+          <tbody
+            class=""
+          />
+        </table>
+        <button
+          class="ui mini icon primary left labeled button pageNumButton"
+        >
+          <i
+            aria-hidden="true"
+            class="left chevron icon"
+          />
+          Previous
+        </button>
+        <span
+          class="pageNum"
+        >
+          0
+        </span>
+        <button
+          class="ui mini icon primary right labeled button pageNumButton"
+        >
+          <i
+            aria-hidden="true"
+            class="right chevron icon"
+          />
+          Next
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

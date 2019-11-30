@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test CartItem component renders without crashing 1`] = `
+<div>
+  <tr
+    class=""
+  >
+    <td
+      class="three wide"
+    >
+      test name
+    </td>
+    <td
+      class="three wide"
+    >
+      5
+    </td>
+    <td
+      class="three wide"
+    >
+      125
+    </td>
+    <td
+      class="two wide"
+    >
+      <button
+        class="ui red button"
+        data-testid="delete-button"
+      >
+        Remove from cart
+      </button>
+    </td>
+  </tr>
+</div>
+`;

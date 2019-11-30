@@ -19,5 +19,10 @@ module.exports = {
   plugins: ['react', 'jsx-a11y', 'prettier', 'babel'],
   rules: {
     'no-unused-vars': 0
+  },
+  env: {
+    jest: true,
+    browser: true,
+    node: true
   }
 };
